@@ -2,7 +2,12 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
+//Navegacion-Header
 import Navigation from './components/Navigation'
+
+//Footer
+import Footer from './components/footer'
+
 import NotesList from './components/NotesList'
 import CreateNote from './components/CreateNote'
 import CreateUser from './components/CreateUser'
@@ -34,8 +39,9 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <Navigation />
-      <div className="container p-4">
+    <div className="page-container">
+    <div className='content-wrap'>
+      <Navigation />    
         <Route path="/" exact component={NotesList} />
         <Route path="/edit/:id" component={CreateNote} />
         <Route path="/create" component={CreateNote} />
@@ -61,7 +67,11 @@ function App() {
 
         <Route path='/ventanillas' component={Ventanillas} />
       </div>
+      
+      <Footer/>
+      </div>
     </Router>
+    
   );
 }
 
